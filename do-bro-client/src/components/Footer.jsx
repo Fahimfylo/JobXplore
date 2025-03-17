@@ -2,10 +2,12 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r container mx-auto font-lato from-green-400 to-blue-400 text-white py-10 px-5">
-      <div className="container mx-auto">
+    <footer className="bg-gradient-to-r mx-auto font-lato from-green-400 to-blue-400 text-white py-10 px-5">
+      <div className=" mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
-          <div className="text-4xl font-semibold mb-6 md:mb-0 text-black">JobXplore</div>
+          <div className="text-4xl font-semibold mb-6 md:mb-0 text-black">
+            JobXplore
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 font-semibold text-sm">
             <div>

@@ -45,7 +45,7 @@ const BidRequests = () => {
 
   if(isLoading) return <p>Data is loading...</p>
   return (
-    <section className="container px-4 mx-auto pt-12">
+    <section className=" px-4 mx-auto pt-12">
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 ">Bid Requests</h2>
 

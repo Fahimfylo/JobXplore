@@ -1,14 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const port = process.env.PORT || 5000;
+const cookieParser = require("cookie-parser");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const jwt = require("jsonwebtoken");
 const app = express();
-const cookieParser = require("cookie-parser");
+const port = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: ["http://localhost:5173"], // Added '//' after 'http:'
+  origin: ["http://localhost:5173"], 
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -199,13 +199,13 @@ async function run() {
       const search = req.query.search;
 
       let query = {
-        job_title : {$regex: search, $options: 'i'},
+        job_title: { $regex: search, $options: "i" },
       };
-      if (filter) query.category = filter
+      if (filter) query.category = filter;
       let options = {};
       if (sort) options = { sort: { deadline: sort === "asc" ? 1 : -1 } };
       const result = await jobsCollection
-        .find(query,options )
+        .find(query, options)
         .skip(page * size)
         .limit(size)
         .toArray();
@@ -215,11 +215,11 @@ async function run() {
     // Get All jobs data count from db
     app.get("/jobs-count", async (req, res) => {
       const filter = req.query.filter;
-      const search = req.query.search
+      const search = req.query.search;
       let query = {
-        job_title : {$regex: search, $options: 'i'},
+        job_title: { $regex: search, $options: "i" },
       };
-      if (filter) query.category = filter
+      if (filter) query.category = filter;
       const count = await jobsCollection.countDocuments(query);
       res.send({ count });
     });

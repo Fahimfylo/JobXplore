@@ -17,7 +17,7 @@ import bgImg3 from '../assets/images/carousel3.jpg'
 
 export default function Carousel() {
   return (
-    <div className='container font-lato py-10 mx-auto'>
+    <div className=' font-lato py-10 mx-auto'>
       <Swiper
         spaceBetween={30}
         loop={true}

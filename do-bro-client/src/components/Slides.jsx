@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
 
 const Slides = ({image, text}) => {
-    return (
+
+  return (
       <div
         className='w-full bg-center bg-cover font-lato h-[38rem]'
         style={{
